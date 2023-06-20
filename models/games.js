@@ -3,7 +3,7 @@ const mongoose  = require('mongoose')
 const gamesSchema = new mongoose.Schema({
     name : {
         type : String,
-        required : [true,'name is required!']
+        required : true
     },
     completed : {
         type : Boolean,
@@ -12,6 +12,10 @@ const gamesSchema = new mongoose.Schema({
     image_url : {
         type: String,
         default:""
+    },
+    author : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'users'
     }
 })
 
